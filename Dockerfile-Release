@@ -1,0 +1,8 @@
+FROM python:3.13-slim-bullseye
+
+RUN pip install --no-cache-dir --upgrade -i https://pypi.org/simple aktools
+
+ENV APP_HOME=/app
+WORKDIR $APP_HOME
+
+CMD ["python", "-m", "aktools", "--host", "0.0.0.0"]
